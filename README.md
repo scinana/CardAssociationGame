@@ -1,3 +1,5 @@
+# Intro
+
 This repo will have a copy of the files in [this repo](https://github.com/scinana/memory-card-game), which is a fork from [this repo](https://github.com/saelsa/memory-card-game).
 
 The only reason I'm copying everything to a new repo is so that I can host this association game on its own github page, 
@@ -7,3 +9,6 @@ to be hosted on github pages).
 
 Now I can keep the [card memory game repo](https://github.com/scinana/memory-card-game) on its own github page (based on the master branch or the test1 branch),
 while I run other tests on this current repo (CardAssociationGame) and this page. 
+
+# Play the game
+To try the book association game, **[click here](https://scinana.github.io/CardAssociationGame/)**
