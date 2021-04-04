@@ -1,0 +1,371 @@
+/* ...............................
+
+GLOBAL SETTINGS
+.................................*/
+
+/* COLOR PALETTE
+credit to http://colorpalettes.net/color-palette-1298/
+#a6d5e5
+#85c3b4
+#fbed60
+#96bce9
+#ddcfe8
+*/
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    background: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    color: #555;
+    font-size: 14px;
+    overflow-x: hidden;
+    text-align: center;
+    background: #ffffff;
+}
+
+
+
+h1 {
+    font-family: 'Amatic SC', cursive;
+    font-size: 300%;
+    padding: 20px;
+}
+
+h2 {
+    margin: 5% 0;
+    color: #000000;
+    font-weight: 300;
+}
+
+.fa-star {
+    color: #fbed60;
+}
+
+p {
+    margin: 1%;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.fa-undo {
+    padding: 0 20% 20% 20%;
+}
+
+.message-box .fa-undo {
+    padding: 10%;
+}
+
+.fa-undo:hover {
+    cursor: pointer;
+}
+
+
+
+/* ...............................
+
+GENERAL PAGE LAYOUT
+.................................*/
+
+header::before,
+footer::after {
+    display: block;
+    content: '';
+    width: 100%;
+    background: #cc0044;
+    height: 20px;
+}
+
+header {
+    margin: auto;
+    background: #ffc994;
+    -webkit-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+footer {
+    margin: 20px 0 0 0;
+    background: #f5f5f5;
+}
+
+footer div {
+    font-size: 80%;
+    padding: 10px;
+}
+
+
+
+/* ...............................
+
+SPECIFIC SETTINGS
+.................................*/
+
+.game {
+	min-width:500px;
+    max-width: 700px;
+    margin: auto;
+}
+
+
+
+/* STATISTICS */
+
+.stats {
+    margin: 30px 0 10px 0;
+}
+
+ul.stats {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+
+}
+
+ul.stats li {
+    display: inline-block;
+    padding: 5px;
+    width: 25%;
+}
+
+
+/* CARDBOARD */
+
+/* card with equal height and width on resizing , credit to http://www.mademyday.de/css-height-equals-width-with-pure-css.html/ */
+
+.container {
+    display: inline-block;
+    width: 20%;
+    margin: 1%;
+    position: relative;
+    -webkit-perspective: 800px;
+    perspective: 800px;	
+}
+
+.container::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+.withDescription{
+	
+}
+
+
+/*card flip effect, credit to https://desandro.github.io/3dtransforms/docs/card-flip.html */
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+}
+
+.card figure {
+	min-width: 100%;
+    margin: 0;
+    display: block;
+    position: absolute;
+    width: 100%;
+	height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 5px 5px;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card figure:hover {
+    -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+	background-color: yellow;
+	opacity: 0.5;
+}
+
+.front {
+    background-color: #ffb3b3;
+	min-width:100%
+}
+
+/* .back {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+	background-color: #24d6aa;
+
+}
+*/
+.card.flipped {
+    /*-webkit-transform: rotateY( 180deg);
+    transform: rotateY( 180deg);*/
+	cursor: pointer;
+	border: 3px solid #4c5956;
+	border-radius: 10px;
+} 
+
+.card.solved {
+    /* -webkit-transform: rotateY( 180deg);*/
+    /*transform: rotateY( 180deg); */
+	/*adding border to card when solved*/
+	border-radius: 10px;
+	border: 6px solid #81e02d;
+}
+
+
+/* Card Backgrounds */ 
+
+[data-card-type="A1"] .front {
+    background: #f5f5f5 url('../img/img1.jpg');
+	background-size: contain;
+}
+
+/*testing adding front instead of back*/
+
+[data-card-type="A2"] .front {
+    background: #f5f5f5 url('../img/img2.jpg');
+	background-size: contain;
+}
+
+[data-card-type="B1"] .front {
+    background: #f5f5f5 url('../img/img3.jpg');
+	background-size: contain;
+}
+
+[data-card-type="B2"] .front {
+    background: #f5f5f5 url('../img/img4.jpg');
+	background-size: contain;
+}
+
+[data-card-type="C1"] .front {
+    background: #f5f5f5 url('../img/img5.jpg');
+	background-size: contain;
+}
+
+[data-card-type="C2"] .front {
+    background: #f5f5f5 url('../img/img6.jpg');
+	background-size: contain;
+}
+
+[data-card-type="D1"] .front {
+    background: #f5f5f5 url('../img/img7.jpg');
+	background-size: contain;
+}
+
+[data-card-type="D2"] .front {
+    background: #f5f5f5 url('../img/img8.jpg');
+	background-size: contain;
+}
+
+[data-card-type="E1"] .front {
+    background: #f5f5f5 url('../img/img9.jpg');
+	background-size: contain;
+}
+
+[data-card-type="E2"] .front {
+    background: #f5f5f5 url('../img/img10.jpg');
+	background-size: contain;
+}
+
+[data-card-type="F1"] .front {
+    background: #f5f5f5 url('../img/img11.jpg');
+	background-size: contain;
+}
+
+[data-card-type="F2"] .front {
+    background: #f5f5f5 url('../img/img12.jpg');
+	background-size: contain;
+}
+
+[data-card-type="G1"] .front {
+    background: #f5f5f5 url('../img/img13.jpg');
+	background-size: contain;
+}
+
+[data-card-type="G2"] .front {
+    background: #f5f5f5 url('../img/img14.jpg');
+	background-size: contain;
+}
+
+[data-card-type="H1"] .front {
+    background: #f5f5f5 url('../img/img15.jpg');
+	background-size: contain;
+}
+
+[data-card-type="H2"] .front {
+    background: #f5f5f5 url('../img/img16.jpg');
+	background-size: contain;
+}
+
+/* POPUP MESSAGE ON WINNING */
+
+.game-over {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.message-box {
+    background: rgb(255, 255, 255);
+    width: 70%;
+    max-width: 500px;
+    max-height: 500px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column;
+    flex-flow: column;
+    padding: 5%;
+    border: 5px solid #fbed60;
+    border-radius: 20px;
+}
+/*added answer from https://stackoverflow.com/questions/66934043/how-to-remove-a-css-class-and-close-a-pop-up-message-at-the-same-time*/
+.message-box {
+    position: relative;
+}
+
+.close-popup {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
