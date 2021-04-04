@@ -87,7 +87,7 @@ $(function () {
 
                 pairs++;
 
-                if (pairs === 2) {
+                if (pairs === 8) {
                     gameOver();
                 }
             };
